@@ -1,0 +1,568 @@
+[gd_scene load_steps=17 format=2]
+
+[ext_resource path="res://Sprites/RaceTrack1.png" type="Texture" id=1]
+[ext_resource path="res://NetworkDrawer.gd" type="Script" id=2]
+[ext_resource path="res://Player/AlghoritmicPlayer.tscn" type="PackedScene" id=3]
+[ext_resource path="res://minecraft-font/MinecraftRegular-Bmg3.otf" type="DynamicFontData" id=4]
+[ext_resource path="res://TrainingScene.gd" type="Script" id=5]
+[ext_resource path="res://Player/RealPlayer.tscn" type="PackedScene" id=6]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 126.258, 3.0396 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 158.294, 5.09064 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 64
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 128
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 68
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 12
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=7]
+size = 64
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=8]
+size = 27
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=9]
+size = 48
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=10]
+size = 26
+font_data = ExtResource( 4 )
+
+[node name="TrainingScene" type="Node2D"]
+pause_mode = 2
+script = ExtResource( 5 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = -449.818
+margin_top = -245.941
+margin_right = 2031.18
+margin_bottom = 1194.06
+color = Color( 0.660156, 0.660156, 0.660156, 1 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="RaceTrack1" type="StaticBody2D" parent="."]
+collision_layer = 2
+
+[node name="Sprite" type="Sprite" parent="RaceTrack1"]
+position = Vector2( 710.146, 497.101 )
+scale = Vector2( 0.417487, 0.417487 )
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="RaceTrack1"]
+polygon = PoolVector2Array( 208.507, 136.98, 210.507, 686.98, 264.507, 788.98, 548.507, 832.98, 910.507, 812.98, 1080.51, 704.98, 828.507, 682.98, 694.507, 522.98, 822.507, 362.98, 1010.51, 294.98, 1144.51, 212.98, 1082.51, 128.98, 950.507, 142.98, 822.507, 98.9797, 486.507, 108.98 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="RaceTrack1"]
+polygon = PoolVector2Array( 1143.4, 29.9346, 1267.85, 107.297, 1315.93, 290.556, 897, 493, 1064.38, 562.836, 1211.04, 546.946, 1419.21, 695.925, 1284.67, 813.65, 992.755, 995.561, 491.327, 984.663, 127.935, 939.357, 1.45575, 781.73, 77.1402, 500.837, 6.50488, 198.114, 146.068, 22.1593, 456.008, 2.63051, 840.674, -0.337708, 992.036, 46.7525, 1142.62, 30.3546, 1135.2, -36.9213, 955.26, -134.649, -137.905, -111.104, -245.54, 507.796, -87.4512, 1116.6, 554.994, 1331.87, 1577.52, 1136.79, 1772.61, 497.705, 1466.53, 67.1663, 1261.35, -87.5587, 1135.11, -37.2363 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="reward_cp" type="Node2D" parent="RaceTrack1"]
+position = Vector2( 136.65, 792.403 )
+
+[node name="Area2D" type="Area2D" parent="RaceTrack1/reward_cp"]
+position = Vector2( -25.2269, -95.8622 )
+rotation = -0.380482
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RaceTrack1/reward_cp/Area2D"]
+shape = SubResource( 1 )
+
+[node name="Area2D2" type="Area2D" parent="RaceTrack1/reward_cp"]
+position = Vector2( -6.53915, -189.301 )
+rotation = -0.111701
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RaceTrack1/reward_cp/Area2D2"]
+shape = SubResource( 1 )
+
+[node name="Area2D3" type="Area2D" parent="RaceTrack1/reward_cp"]
+position = Vector2( 4.13956, -301.428 )
+rotation = -0.0506146
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RaceTrack1/reward_cp/Area2D3"]
+shape = SubResource( 1 )
+
+[node name="Area2D4" type="Area2D" parent="RaceTrack1/reward_cp"]
+position = Vector2( -3.86948, -434.912 )
+rotation = -0.0506146
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RaceTrack1/reward_cp/Area2D4"]
+shape = SubResource( 1 )
+
+[node name="Area2D5" type="Area2D" parent="RaceTrack1/reward_cp"]
+position = Vector2( -21.2224, -532.355 )
+rotation = 0.0226893
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RaceTrack1/reward_cp/Area2D5"]
+shape = SubResource( 1 )
+
+[node name="Area2D6" type="Area2D" parent="RaceTrack1/reward_cp"]
+position = Vector2( 5.4744, -647.151 )
+rotation = 0.176278
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RaceTrack1/reward_cp/Area2D6"]
+shape = SubResource( 1 )
+
+[node name="Area2D7" type="Area2D" parent="RaceTrack1/reward_cp"]
+position = Vector2( 67.6998, -713.619 )
+rotation = 1.00531
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RaceTrack1/reward_cp/Area2D7"]
+shape = SubResource( 1 )
+
+[node name="Area2D8" type="Area2D" parent="RaceTrack1/reward_cp"]
+position = Vector2( 165.281, -727.761 )
+rotation = 1.47655
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RaceTrack1/reward_cp/Area2D8"]
+shape = SubResource( 1 )
+
+[node name="Area2D9" type="Area2D" parent="RaceTrack1/reward_cp"]
+position = Vector2( 288.317, -739.075 )
+rotation = 1.47655
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RaceTrack1/reward_cp/Area2D9"]
+shape = SubResource( 1 )
+
+[node name="Area2D10" type="Area2D" parent="RaceTrack1/reward_cp"]
+position = Vector2( 411.354, -746.146 )
+rotation = 1.47655
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RaceTrack1/reward_cp/Area2D10"]
+shape = SubResource( 1 )
+
+[node name="Area2D11" type="Area2D" parent="RaceTrack1/reward_cp"]
+position = Vector2( 516.006, -750.389 )
+rotation = 1.56381
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RaceTrack1/reward_cp/Area2D11"]
+shape = SubResource( 1 )
+
+[node name="Area2D12" type="Area2D" parent="RaceTrack1/reward_cp"]
+position = Vector2( 610.758, -743.318 )
+rotation = 1.61268
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RaceTrack1/reward_cp/Area2D12"]
+shape = SubResource( 1 )
+
+[node name="Area2D13" type="Area2D" parent="RaceTrack1/reward_cp"]
+position = Vector2( 710.678, -731.92 )
+rotation = 1.69122
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RaceTrack1/reward_cp/Area2D13"]
+shape = SubResource( 1 )
+
+[node name="Area2D14" type="Area2D" parent="RaceTrack1/reward_cp"]
+position = Vector2( 817.058, -707.947 )
+rotation = 1.63537
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RaceTrack1/reward_cp/Area2D14"]
+shape = SubResource( 1 )
+
+[node name="Area2D15" type="Area2D" parent="RaceTrack1/reward_cp"]
+position = Vector2( 956.4, -701.954 )
+rotation = 1.9984
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RaceTrack1/reward_cp/Area2D15"]
+shape = SubResource( 1 )
+
+[node name="Area2D16" type="Area2D" parent="RaceTrack1/reward_cp"]
+position = Vector2( 1062.78, -586.584 )
+rotation = 2.8763
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RaceTrack1/reward_cp/Area2D16"]
+shape = SubResource( 1 )
+
+[node name="Area2D17" type="Area2D" parent="RaceTrack1/reward_cp"]
+position = Vector2( 984.78, -476.584 )
+rotation = 3.96015
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RaceTrack1/reward_cp/Area2D17"]
+shape = SubResource( 1 )
+
+[node name="Area2D18" type="Area2D" parent="RaceTrack1/reward_cp"]
+position = Vector2( 898.78, -428.584 )
+rotation = 3.96015
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RaceTrack1/reward_cp/Area2D18"]
+shape = SubResource( 1 )
+
+[node name="Area2D19" type="Area2D" parent="RaceTrack1/reward_cp"]
+position = Vector2( 806.78, -380.584 )
+rotation = 3.96015
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RaceTrack1/reward_cp/Area2D19"]
+shape = SubResource( 1 )
+
+[node name="Area2D20" type="Area2D" parent="RaceTrack1/reward_cp"]
+position = Vector2( 716.78, -324.584 )
+rotation = 3.40165
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RaceTrack1/reward_cp/Area2D20"]
+shape = SubResource( 1 )
+
+[node name="Area2D21" type="Area2D" parent="RaceTrack1/reward_cp"]
+position = Vector2( 706.78, -246.584 )
+rotation = 2.83441
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RaceTrack1/reward_cp/Area2D21"]
+shape = SubResource( 1 )
+
+[node name="Area2D22" type="Area2D" parent="RaceTrack1/reward_cp"]
+position = Vector2( 794.78, -182.584 )
+rotation = 2.38237
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RaceTrack1/reward_cp/Area2D22"]
+shape = SubResource( 1 )
+
+[node name="Area2D23" type="Area2D" parent="RaceTrack1/reward_cp"]
+position = Vector2( 946.78, -162.584 )
+rotation = 2.38237
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RaceTrack1/reward_cp/Area2D23"]
+shape = SubResource( 1 )
+
+[node name="Area2D24" type="Area2D" parent="RaceTrack1/reward_cp"]
+position = Vector2( 1053.27, -134.241 )
+rotation = 2.74889
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RaceTrack1/reward_cp/Area2D24"]
+shape = SubResource( 1 )
+
+[node name="Area2D25" type="Area2D" parent="RaceTrack1/reward_cp"]
+position = Vector2( 1045.49, -33.8319 )
+rotation = 3.51858
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RaceTrack1/reward_cp/Area2D25"]
+shape = SubResource( 1 )
+
+[node name="Area2D26" type="Area2D" parent="RaceTrack1/reward_cp"]
+position = Vector2( 909.764, 54.2689 )
+rotation = 3.96713
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RaceTrack1/reward_cp/Area2D26"]
+shape = SubResource( 1 )
+
+[node name="Area2D27" type="Area2D" parent="RaceTrack1/reward_cp"]
+position = Vector2( 778.39, 110.42 )
+rotation = 4.46804
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RaceTrack1/reward_cp/Area2D27"]
+shape = SubResource( 1 )
+
+[node name="Area2D28" type="Area2D" parent="RaceTrack1/reward_cp"]
+position = Vector2( 482.8, 121.015 )
+rotation = 4.70541
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RaceTrack1/reward_cp/Area2D28"]
+shape = SubResource( 1 )
+
+[node name="Area2D29" type="Area2D" parent="RaceTrack1/reward_cp"]
+position = Vector2( 231.07, 102.63 )
+rotation = 4.94975
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RaceTrack1/reward_cp/Area2D29"]
+shape = SubResource( 1 )
+
+[node name="finish_cp" type="Area2D" parent="RaceTrack1"]
+position = Vector2( 151.143, 788.676 )
+rotation = -0.588176
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RaceTrack1/finish_cp"]
+shape = SubResource( 2 )
+
+[node name="PlayerSpawn" type="Node2D" parent="."]
+position = Vector2( 210.35, 863.532 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="AlgorithmPlayer" parent="PlayerSpawn" instance=ExtResource( 3 )]
+
+[node name="rPlayerSpawn" type="Node2D" parent="."]
+position = Vector2( 210.35, 863.532 )
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="RealPlayer" parent="rPlayerSpawn" instance=ExtResource( 6 )]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+zoom = Vector2( 2.05, 2.05 )
+limit_left = -107
+limit_top = -124
+limit_right = 1981
+limit_bottom = 1099
+editor_draw_limits = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="fps_label" type="Label" parent="."]
+margin_left = 1845.18
+margin_top = 944.91
+margin_right = 1964.18
+margin_bottom = 1077.91
+custom_fonts/font = SubResource( 3 )
+text = "180
+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ScoreLabel" type="Label" parent="."]
+margin_left = 1714.74
+margin_top = -66.2362
+margin_right = 1791.74
+margin_bottom = 62.7638
+custom_fonts/font = SubResource( 4 )
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="OtherData" type="Label" parent="."]
+margin_left = 1472.0
+margin_top = 100.0
+margin_right = 1958.0
+margin_bottom = 593.0
+custom_fonts/font = SubResource( 5 )
+text = "ghfysthtrhsheryf"
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Network_im" type="Control" parent="."]
+margin_left = 1249.83
+margin_top = 331.627
+margin_right = 1388.83
+margin_bottom = 410.627
+rect_scale = Vector2( 5, 5 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+minefont = SubResource( 6 )
+
+[node name="value_sw" type="CheckButton" parent="Network_im"]
+margin_left = 78.9372
+margin_top = -19.5086
+margin_right = 236.937
+margin_bottom = 20.4914
+rect_scale = Vector2( 0.4, 0.4 )
+pressed = true
+text = "Show values"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="agent_v" type="Label" parent="Network_im"]
+margin_left = 38.1034
+margin_top = 80.182
+margin_right = 445.103
+margin_bottom = 145.182
+rect_scale = Vector2( 0.2, 0.2 )
+custom_fonts/font = SubResource( 7 )
+text = "body speed: "
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LineEdit" type="LineEdit" parent="."]
+margin_left = 1381.0
+margin_top = 1009.0
+margin_right = 1559.0
+margin_bottom = 1061.0
+custom_fonts/font = SubResource( 8 )
+text = "320"
+placeholder_text = "Max speed"
+caret_blink = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Child_count" type="Label" parent="."]
+margin_left = -77.4339
+margin_top = -112.427
+margin_right = 197.566
+margin_bottom = -63.4265
+custom_fonts/font = SubResource( 9 )
+text = "child count:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="max_speed_label" type="Label" parent="."]
+margin_left = 1088.25
+margin_top = 1008.31
+margin_right = 1363.25
+margin_bottom = 1057.31
+custom_fonts/font = SubResource( 9 )
+text = "max speed:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="show_al" type="CheckButton" parent="."]
+margin_left = 1339.85
+margin_top = -108.27
+margin_right = 1612.85
+margin_bottom = -68.2704
+rect_scale = Vector2( 1.2, 1.2 )
+custom_fonts/font = SubResource( 10 )
+pressed = true
+text = "Show algorithm"
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="show_pl" type="CheckButton" parent="."]
+margin_left = 1378.55
+margin_top = -53.7755
+margin_right = 1620.55
+margin_bottom = -13.7755
+rect_scale = Vector2( 1.2, 1.2 )
+custom_fonts/font = SubResource( 10 )
+pressed = true
+text = "Show player"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="show_casts" type="CheckButton" parent="."]
+margin_left = 1378.55
+margin_top = -0.968582
+margin_right = 1620.55
+margin_bottom = 39.0314
+rect_scale = Vector2( 1.2, 1.2 )
+custom_fonts/font = SubResource( 10 )
+pressed = true
+text = "Show casts"
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+[connection signal="death" from="PlayerSpawn/AlgorithmPlayer" to="." method="_on_AlgorithmPlayer_death"]
+[connection signal="toggled" from="Network_im/value_sw" to="Network_im" method="_on_value_sw_toggled"]
+[connection signal="text_entered" from="LineEdit" to="." method="_on_LineEdit_text_entered"]
+[connection signal="toggled" from="show_al" to="." method="_on_hide_al_toggled"]
+[connection signal="toggled" from="show_pl" to="." method="_on_hide_pl_toggled"]
+[connection signal="toggled" from="show_casts" to="." method="_on_hide_casts_toggled"]

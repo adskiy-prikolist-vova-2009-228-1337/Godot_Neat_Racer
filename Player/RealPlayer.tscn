@@ -1,0 +1,120 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Player/RealPlayer.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/SuperRaceCar.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/smallreddot1test.png" type="Texture" id=3]
+[ext_resource path="res://Player/RedColorChange.shader" type="Shader" id=4]
+
+[sub_resource type="ShaderMaterial" id=1]
+shader = ExtResource( 4 )
+shader_param/new_color = Plane( 1, 1, 0, 1 )
+
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 76.1747
+height = 222.0
+
+[node name="RealPlayer" type="KinematicBody2D"]
+scale = Vector2( 0.2, 0.2 )
+collision_mask = 0
+script = ExtResource( 1 )
+__meta__ = {
+"_editor_description_": ""
+}
+dot_texture = ExtResource( 3 )
+
+[node name="Raycastlines" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="Clickable" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="Sprite" type="Sprite" parent="."]
+material = SubResource( 1 )
+scale = Vector2( 0.8, 0.8 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 2 )
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="Rays" type="Node2D" parent="."]
+
+[node name="RayCast2D" type="RayCast2D" parent="Rays"]
+scale = Vector2( 5, 5 )
+enabled = true
+cast_to = Vector2( 0, -450 )
+collision_mask = 2
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="RayCast2D2" type="RayCast2D" parent="Rays"]
+scale = Vector2( 5, 5 )
+enabled = true
+cast_to = Vector2( 240, 0 )
+collision_mask = 2
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="RayCast2D3" type="RayCast2D" parent="Rays"]
+scale = Vector2( 5, 5 )
+enabled = true
+cast_to = Vector2( -240, 0 )
+collision_mask = 2
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="RayCast2D4" type="RayCast2D" parent="Rays"]
+scale = Vector2( 5, 5 )
+enabled = true
+cast_to = Vector2( -104, -330 )
+collision_mask = 2
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="RayCast2D5" type="RayCast2D" parent="Rays"]
+scale = Vector2( 5, 5 )
+enabled = true
+cast_to = Vector2( 104, -330 )
+collision_mask = 2
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="RayCast2D6" type="RayCast2D" parent="Rays"]
+scale = Vector2( 5, 5 )
+enabled = true
+cast_to = Vector2( 250, -180 )
+collision_mask = 2
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="RayCast2D7" type="RayCast2D" parent="Rays"]
+scale = Vector2( 5, 5 )
+enabled = true
+cast_to = Vector2( -250, -180 )
+collision_mask = 2
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="Ray_dots" type="Node2D" parent="."]
