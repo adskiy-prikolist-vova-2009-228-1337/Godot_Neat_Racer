@@ -60,7 +60,7 @@ func place_bodies(bodies: Array) -> void:
 	for body in bodies:
 		$PlayerSpawn.add_child(body)
 		body.get_node("Clickable").connect("clicked", self, "onagentclicked")
-		
+		body.get_node("Ray_dots").visible = $show_casts.pressed
 	reset_score()
 
 
